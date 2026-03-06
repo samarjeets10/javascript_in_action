@@ -26,3 +26,34 @@ function darkModeOff() {
     button.classList.remove('dark');
     modeOn = false;
 }
+
+// GSAP ANIMATION FOR MARQUE TICKERS :
+
+window.addEventListener('wheel', (event) => {
+    if (event.deltaY > 0) {
+        gsap.to(".ticker__text", {
+            transform: "translateX(-400%)",
+            duration: 8,
+            repeat: -1,
+            ease: "none"
+        });
+
+        gsap.to(".ticker__text i", {
+            rotate: 180,
+            ease: "power-2"
+        })
+    } else {
+        gsap.to(".ticker__text", {
+            transform: "translateX(-100%)",
+            duration: 2,
+            repeat: -1,
+            ease: "none"
+        });
+
+        gsap.to(".ticker__text i", {
+            rotate: 0,
+            ease: "power-2"
+        })
+    }
+})
+

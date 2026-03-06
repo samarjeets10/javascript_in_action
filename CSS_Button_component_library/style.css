@@ -95,7 +95,7 @@ nav {
 
 .hero__container {
     width: 100%;
-    padding-block: 4rem;
+    padding-block: 4rem 2rem;
     padding-inline: 1rem;
 
     display: flex;
@@ -112,6 +112,7 @@ nav {
 .hero__title {
     font-size: 2.6rem;
     font-weight: 600;
+    flex-shrink: nowrap;
 }
 
 .hero__text__content p {
@@ -121,7 +122,7 @@ nav {
 }
 
 .cta__btn {
-    margin-top: 1rem;
+    margin-top: 1.6rem;
     padding: 0.6rem 1.4rem;
     background-color: transparent;
     border: 2px solid var(--gray-dark);
@@ -132,6 +133,143 @@ nav {
     font-weight: 600;
     letter-spacing: 0.1rem;
 }
+
+
+.marque__container {
+    width: 100%;
+    padding-block: 2vw;
+    overflow: hidden;
+}
+
+.ticker__wrapper {
+    width: 100%;
+    padding-block: 0.6rem;
+    border-block: 2px solid var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 4vw;
+    transform: rotate(-2deg);
+}
+
+
+.ticker__text {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 2vw;
+}
+
+.ticker__text span {
+    font-size: 2.4vw;
+    font-weight: 400;
+}
+
+.ticker__text i {
+    font-size: 2vw;
+}
+
+.components__section {
+    padding-block: 2vw;
+}
+
+.components__section__title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title__cta {
+    width: fit-content;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid var(--text-primary);
+    border-radius: 0.8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.title__cta h1 {
+    font-size: 1.4vw;
+    font-weight: 500;
+}
+
+.title__cta i {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.components__container {
+    width: 100%;
+    margin-top: 3.6rem;
+    /* background-color: red; */
+    padding-inline: 4vw;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr));
+    row-gap: 2rem;
+    column-gap: 1rem;
+}
+
+.card {
+    padding: 0.8rem;
+    width: fit-content;
+    border: 2px solid var(--text-primary);
+    border-radius: 0.4rem;
+}
+
+.preview__box {
+    height: 240px;
+    width: 380px;
+    border: 2px solid var(--text-primary);
+    border-radius: 0.4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__text__content {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.left__text h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.left__text p {
+    font-size: 0.94rem;
+}
+
+.right__cta {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.right__cta i {
+    font-size: 1.8rem;
+}
+
+.right__cta span {
+    font-size: 1.2rem;
+}
+
+
+
+
 
 
 @media (width < 480px) {
@@ -147,7 +285,6 @@ nav {
 
     .hero__text__content {
         width: 100%;
-        padding: 0;
     }
 
     .hero__title {
@@ -189,7 +326,8 @@ nav {
 
     .hero__text__content {
         width: 80%;
-        padding: 1.6rem;
+        padding: 0px;
     }
+
 
 }
