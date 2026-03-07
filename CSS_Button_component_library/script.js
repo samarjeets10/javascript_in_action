@@ -1,6 +1,6 @@
 
 
-// Dark Mode switcher
+// Dark Mode Switcher 
 
 const button = document.querySelector(".inner__box");
 const body = document.querySelector("body");
@@ -26,6 +26,30 @@ function darkModeOff() {
     button.classList.remove('dark');
     modeOn = false;
 }
+
+
+// Like Mechanism :
+
+const likeIcon = document.querySelectorAll('.right__cta i');
+let likeDone = false;
+
+function LikeMech() {
+
+    likeIcon.forEach((icon) => {
+        icon.addEventListener('click', () => {
+            if(likeDone === false) {
+                icon.classList.add('like');
+                likeDone = true;
+            } else {
+                icon.classList.remove('like');
+                likeDone = false;
+            }
+        })
+    })
+};
+
+LikeMech();
+
 
 // GSAP ANIMATION FOR MARQUE TICKERS :
 
@@ -55,5 +79,7 @@ window.addEventListener('wheel', (event) => {
             ease: "power-2"
         })
     }
-})
+});
+
+
 

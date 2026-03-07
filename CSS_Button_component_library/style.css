@@ -260,7 +260,12 @@ nav {
 }
 
 .right__cta i {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.like {
+    color: red;
 }
 
 .right__cta span {
