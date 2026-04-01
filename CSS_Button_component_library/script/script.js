@@ -123,7 +123,7 @@ window.addEventListener('wheel', (event) => {
 // get data :
 
 async function getCardData() {
-    const response = await fetch('./data/buttonsData.json');
+    const response = await fetch('../data/buttonsData.json');
     const data = await response.json();
     console.log(data);
 
