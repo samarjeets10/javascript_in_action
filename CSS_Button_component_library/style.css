@@ -9,7 +9,8 @@
     --text-primary: #1a1a1a;
     
     --gray-light: #ccc;
-    --gray-dark: #bbbb;
+    /* --gray-dark: #bbbb; */
+    --gray-dark: #2C2C2C;
 }
 
 .mode__dark {
@@ -17,7 +18,8 @@
     --text-primary: #F7F9FD;
 
     --gray-light: #ccc;
-    --gray-dark: #bbbb;
+    /* --gray-dark: #bbbb; */
+    --gray-dark: #2C2C2C;
 }
 
 * {
@@ -82,7 +84,8 @@ nav {
 .inner__box {
     height: 20px;
     width: 20px;
-    background-color: #808080;
+    /* background-color: #808080; */
+    background-color: #2C2C2C;
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
@@ -124,14 +127,20 @@ nav {
 .cta__btn {
     margin-top: 1.6rem;
     padding: 0.6rem 1.4rem;
-    background-color: transparent;
-    border: 2px solid var(--gray-dark);
-    border-radius: 4rem;
+    /* background-color: transparent; */
+    background-color: var(--gray-dark);
+    border: none;
+    border-radius: 0.6rem;
     cursor: pointer;
-    color: var(--text-primary);
+    /* color: var(--text-primary); */
+    color: white;
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0.1rem;
+}
+
+.cta__btn i {
+    color: white;
 }
 
 
@@ -208,7 +217,7 @@ nav {
     padding-inline: 4vw;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr));
     row-gap: 2rem;
     column-gap: 1rem;
 }
@@ -221,14 +230,35 @@ nav {
 }
 
 .preview__box {
-    height: 240px;
+    height: 280px;
     width: 380px;
+    position: relative;
     border: 2px solid var(--text-primary);
     border-radius: 0.4rem;
 
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.copy__code {
+    padding: 0.2rem 0.4rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+    background-color: #cccc;
+    border-radius: 0.5rem;
+
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.copy__code i {
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-weight: 600;
 }
 
 .card__text__content {
@@ -271,8 +301,6 @@ nav {
 .right__cta span {
     font-size: 1.2rem;
 }
-
-
 
 
 

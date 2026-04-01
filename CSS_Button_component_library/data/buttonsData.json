@@ -1,10 +1,52 @@
-
 [
-    {
-        
-    },
-
-    {
-
-    }
+  {
+    "name": "Primary Button",
+    "description": "Main call-to-action button",
+    "html": "<button class='btn btn-primary'>Get Started</button>"
+  },
+  {
+    "name": "Secondary Button",
+    "description": "Less important action button",
+    "html": "<button class='btn btn-secondary'>Learn More</button>"
+  },
+  {
+    "name": "Outline Button",
+    "description": "Minimal bordered button style",
+    "html": "<button class='btn btn-outline'>Explore</button>"
+  },
+  {
+    "name": "Ghost Button",
+    "description": "Subtle transparent button",
+    "html": "<button class='btn btn-ghost'>View Details</button>"
+  },
+  {
+    "name": "Gradient Button",
+    "description": "Modern gradient styled button",
+    "html": "<button class='btn btn-gradient'>Upgrade</button>"
+  },
+  {
+    "name": "Rounded Button",
+    "description": "Fully rounded pill button",
+    "html": "<button class='btn btn-rounded'>Continue</button>"
+  },
+  {
+    "name": "Icon Button",
+    "description": "Button with icon and text",
+    "html": "<button class='btn btn-icon'><i class='ri-download-line'></i> Download</button>"
+  },
+  {
+    "name": "Shadow Button",
+    "description": "Elevated button with shadow",
+    "html": "<button class='btn btn-shadow'>Submit</button>"
+  },
+  {
+    "name": "Neon Button",
+    "description": "Glowing neon effect button",
+    "html": "<button class='btn btn-neon'>Click Me</button>"
+  },
+  {
+    "name": "Danger Button",
+    "description": "Used for destructive actions",
+    "html": "<button class='btn btn-danger'>Delete</button>"
+  }
 ]
