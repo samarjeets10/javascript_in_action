@@ -1,8 +1,4 @@
 
-import { featchbutton } from "./services/fetchButton";
-import { renderButtons } from "./render/renderButton";
-
-
 async function init() {
     const container = document.querySelector('.components__container');
 

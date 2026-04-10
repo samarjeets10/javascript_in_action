@@ -1,52 +1,107 @@
 [
   {
-    "name": "Primary Button",
-    "description": "Main call-to-action button",
-    "html": "<button class='btn btn-primary'>Get Started</button>"
+    "id": "btn-01",
+    "title": "Push Button with Offset Shadow",
+    "description": "Tactile button with offset shadow that collapses on click.",
+    "html": "<button id=\"btn-01\">Click Me</button>",
+    "css": "#btn-01 {\n    padding: 1rem 2rem;\n    font-size: 1.1rem;\n    border: 2px solid #fff;\n    background-color: transparent;\n    color: #fff;\n    border-radius: 0.6rem;\n    box-shadow: 3px 3px 0 #fff;\n    cursor: pointer;\n}\n\n#btn-01:active {\n    transform: translate(2px, 2px);\n    box-shadow: none;\n}"
   },
   {
-    "name": "Secondary Button",
-    "description": "Less important action button",
-    "html": "<button class='btn btn-secondary'>Learn More</button>"
+    "id": "btn-02",
+    "title": "Red Glow Fill Button",
+    "description": "Fills with red color on hover with glowing border effect.",
+    "html": "<button id=\"btn-02\">Hover Me</button>",
+    "css": "#btn-02 {\n    padding: 1rem 2rem;\n    position: relative;\n    background-color: transparent;\n    border: 2px solid red;\n    border-radius: 12px;\n    font-size: 1.1rem;\n    font-weight: 600;\n    color: #fff;\n    cursor: pointer;\n    z-index: 100;\n    overflow: hidden;\n    transition: all 0.3s ease;\n}\n\n#btn-02:hover {\n    box-shadow: 0 0 30px red;\n}\n\n#btn-02::before {\n    content: '';\n    position: absolute;\n    height: 100%;\n    width: 100%;\n    top: 0;\n    left: -100%;\n    background-color: red;\n    z-index: -1;\n    transition: all 0.3s ease;\n}\n\n#btn-02:hover::before {\n    left: 0;\n}"
   },
   {
-    "name": "Outline Button",
-    "description": "Minimal bordered button style",
-    "html": "<button class='btn btn-outline'>Explore</button>"
+    "id": "btn-03",
+    "title": "Top-Down Fill Button",
+    "description": "Smooth fill animation from top to bottom with glowing effect.",
+    "html": "<button id=\"btn-03\">Explore</button>",
+    "css": "#btn-03 {\n    padding: 1rem 2rem;\n    position: relative;\n    font-size: 1.1rem;\n    font-weight: 600;\n    background-color: transparent;\n    border: 2px solid #fff;\n    border-radius: 10px;\n    color: #fff;\n    cursor: pointer;\n    z-index: 100;\n    transition: all 0.3s ease;\n    overflow: hidden;\n}\n\n#btn-03:hover {\n    color: #000;\n    box-shadow: 0 0 30px #fff;\n}\n\n#btn-03::after {\n    content: '';\n    position: absolute;\n    height: 100%;\n    width: 100%;\n    top: -100%;\n    left: 0;\n    background: #fff;\n    z-index: -1;\n    transition: all 0.3s ease;\n}\n\n#btn-03:hover::after {\n    top: 0;\n}"
   },
   {
-    "name": "Ghost Button",
-    "description": "Subtle transparent button",
-    "html": "<button class='btn btn-ghost'>View Details</button>"
+    "id": "btn-04",
+    "title": "Rainbow Nested Shadows Button",
+    "description": "Colorful nested shadows (red, yellow, green, blue) appear on hover.",
+    "html": "<button id=\"btn-04\">Rainbow</button>",
+    "css": "#btn-04 {\n  width: 170px;\n  height: 60px;\n  font-size: 18px;\n  background: #fff;\n  border: none;\n  border-radius: 50px;\n  color: #000;\n  outline: none;\n  cursor: pointer;\n  transition: all 0.4s;\n}\n\n#btn-04:hover {\n  box-shadow: inset 0 0 0 4px #ef476f, \n              inset 0 0 0 8px #ffd166, \n              inset 0 0 0 12px #06d6a0,\n              inset 0 0 0 16px #118ab2;\n  background: #073b4c;\n  color: #fff;\n}"
   },
   {
-    "name": "Gradient Button",
-    "description": "Modern gradient styled button",
-    "html": "<button class='btn btn-gradient'>Upgrade</button>"
+    "id": "btn-05",
+    "title": "Corner Gradient Decoration Button",
+    "description": "Gradient corner decoration expands on hover for eye-catching effect.",
+    "html": "<button id=\"btn-05\">Hover Me</button>",
+    "css": "#btn-05 {\n  position: relative;\n  font-size: 1.2em;\n  padding: 0.7em 1.4em;\n  background-color: #BF0426;\n  text-decoration: none;\n  border: none;\n  border-radius: 0.5em;\n  color: #DEDEDE;\n  box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.3);\n}\n\n#btn-05::before {\n  position: absolute;\n  content: '';\n  height: 0;\n  width: 0;\n  top: 0;\n  left: 0;\n  background: linear-gradient(135deg, rgba(33,33,33,1) 0%, rgba(33,33,33,1) 50%, rgba(150,4,31,1) 50%, rgba(191,4,38,1) 60%);\n  border-radius: 0 0 0.5em 0;\n  box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.3);\n  transition: 0.3s;\n}\n\n#btn-05:hover::before {\n  width: 1.6em;\n  height: 1.6em;\n}\n\n#btn-05:active {\n  box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.3);\n  transform: translate(0.1em, 0.1em);\n}"
   },
   {
-    "name": "Rounded Button",
-    "description": "Fully rounded pill button",
-    "html": "<button class='btn btn-rounded'>Continue</button>"
+    "id": "btn-06",
+    "title": "3D Lifted Button",
+    "description": "Lifts up on hover with dynamic shadow creating depth effect.",
+    "html": "<button id=\"btn-06\">\n  <span class=\"shadow\"></span>\n  <span class=\"edge\"></span>\n  <span class=\"front\">Press</span>\n</button>",
+    "css": "#btn-06 {\n  position: relative;\n  background: transparent;\n  padding: 0px;\n  border: none;\n  cursor: pointer;\n  outline-offset: 4px;\n  outline-color: deeppink;\n  transition: filter 250ms;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n}\n\n.shadow {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 100%;\n  background: hsl(226, 25%, 69%);\n  border-radius: 8px;\n  filter: blur(2px);\n  will-change: transform;\n  transform: translateY(2px);\n  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);\n}\n\n.edge {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 100%;\n  border-radius: 8px;\n  background: linear-gradient(\n    to right,\n    hsl(248, 39%, 39%) 0%,\n    hsl(248, 39%, 49%) 8%,\n    hsl(248, 39%, 39%) 92%,\n    hsl(248, 39%, 29%) 100%\n  );\n}\n\n.front {\n  display: block;\n  position: relative;\n  border-radius: 8px;\n  background: hsl(248, 53%, 58%);\n  padding: 16px 32px;\n  color: white;\n  font-weight: 600;\n  text-transform: uppercase;\n  letter-spacing: 1.5px;\n  font-size: 1rem;\n  transform: translateY(-4px);\n  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);\n}\n\n#btn-06:hover {\n  filter: brightness(110%);\n}\n\n#btn-06:hover .front {\n  transform: translateY(-6px);\n  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);\n}\n\n#btn-06:active .front {\n  transform: translateY(-2px);\n  transition: transform 34ms;\n}\n\n#btn-06:hover .shadow {\n  transform: translateY(4px);\n  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);\n}\n\n#btn-06:active .shadow {\n  transform: translateY(1px);\n  transition: transform 34ms;\n}\n\n#btn-06:focus:not(:focus-visible) {\n  outline: none;\n}"
   },
   {
-    "name": "Icon Button",
-    "description": "Button with icon and text",
-    "html": "<button class='btn btn-icon'><i class='ri-download-line'></i> Download</button>"
+    "id": "btn-07",
+    "title": "Animated Gradient Border Button",
+    "description": "Animated gradient border that shifts between vibrant colors smoothly.",
+    "html": "<button id=\"btn-07\">Animated</button>",
+    "css": "#btn-07 {\n  --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);\n  --border-width: 0.125em;\n  --curve-size: 0.5em;\n  --blur: 30px;\n  --bg: #080312;\n  --color: #afffff;\n  color: var(--color);\n  cursor: pointer;\n  position: relative;\n  isolation: isolate;\n  display: inline-grid;\n  place-content: center;\n  padding: 0.5em 1.5em;\n  font-size: 17px;\n  border: 0;\n  text-transform: uppercase;\n  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);\n  clip-path: polygon(\n    0% var(--curve-size),\n    var(--curve-size) 0,\n    100% 0,\n    100% calc(100% - var(--curve-size)),\n    calc(100% - var(--curve-size)) 100%,\n    0 100%\n  );\n  transition: color 250ms;\n}\n\n#btn-07::after,\n#btn-07::before {\n  content: \"\";\n  position: absolute;\n  inset: 0;\n}\n\n#btn-07::before {\n  background: var(--border-color);\n  background-size: 300% 300%;\n  animation: move-bg7234 5s ease infinite;\n  z-index: -2;\n}\n\n@keyframes move-bg7234 {\n  0% {\n    background-position: 31% 0%;\n  }\n  50% {\n    background-position: 70% 100%;\n  }\n  100% {\n    background-position: 31% 0%;\n  }\n}\n\n#btn-07::after {\n  background: var(--bg);\n  z-index: -1;\n  clip-path: polygon(\n    var(--border-width)\n      calc(var(--curve-size) + var(--border-width) * 0.5),\n    calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),\n    calc(100% - var(--border-width)) var(--border-width),\n    calc(100% - var(--border-width))\n      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),\n    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))\n      calc(100% - var(--border-width)),\n    var(--border-width) calc(100% - var(--border-width))\n  );\n  transition: clip-path 500ms;\n}\n\n#btn-07:where(:hover, :focus)::after {\n  clip-path: polygon(\n    calc(100% - var(--border-width))\n      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),\n    calc(100% - var(--border-width)) var(--border-width),\n    calc(100% - var(--border-width)) var(--border-width),\n    calc(100% - var(--border-width))\n      calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),\n    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))\n      calc(100% - var(--border-width)),\n    calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))\n      calc(100% - var(--border-width))\n  );\n  transition: 200ms;\n}\n\n#btn-07:where(:hover, :focus) {\n  color: #fff;\n}"
   },
   {
-    "name": "Shadow Button",
-    "description": "Elevated button with shadow",
-    "html": "<button class='btn btn-shadow'>Submit</button>"
+    "id": "btn-08",
+    "title": "Neon Green Sweep Button",
+    "description": "Glowing neon green border with sweeping light beam effect.",
+    "html": "<button id=\"btn-08\">Glow</button>",
+    "css": "#btn-08 {\n  --green: #1BFD9C;\n  font-size: 15px;\n  padding: 0.7em 2.7em;\n  letter-spacing: 0.06em;\n  position: relative;\n  font-family: inherit;\n  border-radius: 0.6em;\n  overflow: hidden;\n  transition: all 0.3s;\n  line-height: 1.4em;\n  border: 2px solid var(--green);\n  background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%,transparent 60% , rgba(27, 253, 156, 0.1) 100%);\n  color: var(--green);\n  box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);\n}\n\n#btn-08:hover {\n  color: #82ffc9;\n  box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);\n}\n\n#btn-08:before {\n  content: \"\";\n  position: absolute;\n  left: -4em;\n  width: 4em;\n  height: 100%;\n  top: 0;\n  transition: transform .4s ease-in-out;\n  background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%,rgba(27, 253, 156, 0.1) 60% , transparent 100%);\n}\n\n#btn-08:hover:before {\n  transform: translateX(15em);\n}"
   },
   {
-    "name": "Neon Button",
-    "description": "Glowing neon effect button",
-    "html": "<button class='btn btn-neon'>Click Me</button>"
+    "id": "btn-09",
+    "title": "Electric Blue Glow Button",
+    "description": "Electric blue color with expanding glow effect for maximum impact.",
+    "html": "<button id=\"btn-09\">Spark</button>",
+    "css": "#btn-09 {\n  padding: 10px 20px;\n  border: none;\n  font-size: 17px;\n  color: #fff;\n  border-radius: 7px;\n  letter-spacing: 4px;\n  font-weight: 700;\n  text-transform: uppercase;\n  transition: 0.5s;\n  transition-property: box-shadow;\n}\n\n#btn-09 {\n  background: rgb(0,140,255);\n  box-shadow: 0 0 25px rgb(0,140,255);\n}\n\n#btn-09:hover {\n  box-shadow: 0 0 5px rgb(0,140,255),\n              0 0 25px rgb(0,140,255),\n              0 0 50px rgb(0,140,255),\n              0 0 100px rgb(0,140,255);\n}"
   },
   {
-    "name": "Danger Button",
-    "description": "Used for destructive actions",
-    "html": "<button class='btn btn-danger'>Delete</button>"
+    "id": "btn-10",
+    "title": "Bold Yellow Offset Button",
+    "description": "Bold yellow border and shadow that translate on hover playfully.",
+    "html": "<button id=\"btn-10\">Jump</button>",
+    "css": "#btn-10 {\n  font-size: 1rem;\n  padding: 0.8em 2em;\n  background-color: #000;\n  border: 3px solid yellow;\n  border-radius: 1em;\n  color: #fff;\n  font-weight: bolder;\n  transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s;\n  box-shadow: -5px 5px 0px 0px yellow;\n}\n\n#btn-10:hover {\n  transform: translate(5px, -5px);\n}"
+  },
+  {
+    "id": "btn-11",
+    "title": "Expanding Circle Fill Button",
+    "description": "Gold border reveals circular fill expanding from center on hover.",
+    "html": "<button id=\"btn-11\">Expand</button>",
+    "css": "#btn-11 {\n  cursor: pointer;\n  position: relative;\n  padding: 10px 24px;\n  font-size: 18px;\n  color: rgb(193, 163, 98);\n  border: 2px solid rgb(193, 163, 98);\n  border-radius: 34px;\n  background-color: transparent;\n  font-weight: 600;\n  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);\n  overflow: hidden;\n}\n\n#btn-11::before {\n  content: '';\n  position: absolute;\n  inset: 0;\n  margin: auto;\n  width: 50px;\n  height: 50px;\n  border-radius: inherit;\n  scale: 0;\n  z-index: -1;\n  background-color: rgb(193, 163, 98);\n  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);\n}\n\n#btn-11:hover::before {\n  scale: 3;\n}\n\n#btn-11:hover {\n  color: #212121;\n  scale: 1.1;\n  box-shadow: 0 0px 20px rgba(193, 163, 98,0.4);\n}\n\n#btn-11:active {\n  scale: 1;\n}"
+  },
+  {
+    "id": "btn-12",
+    "title": "Border Wave Transition Button",
+    "description": "Transitions borders to vibrant colors with dynamic wavy shadow.",
+    "html": "<button id=\"btn-12\">Wave</button>",
+    "css": "#btn-12 {\n  padding: 1rem 2rem;\n  font-weight: 700;\n  background: rgb(255, 255, 255);\n  color: blueviolet;\n  cursor: pointer;\n  border-radius: 0.5rem;\n  border-bottom: 2px solid blueviolet;\n  border-right: 2px solid blueviolet;\n  border-top: 2px solid white;\n  border-left: 2px solid white;\n  transition-duration: 1s;\n  transition-property: border-top, border-left, border-bottom, border-right,\n    box-shadow;\n}\n\n#btn-12:hover {\n  border-top: 2px solid blueviolet;\n  border-left: 2px solid blueviolet;\n  border-bottom: 2px solid rgb(238, 103, 238);\n  border-right: 2px solid rgb(238, 103, 238);\n  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,\n    rgba(240, 46, 170, 0.2) 15px 15px;\n}"
+  },
+  {
+    "id": "btn-13",
+    "title": "Glossy Gradient Button",
+    "description": "Premium glossy button with radial gradients and glowing blob decoration.",
+    "html": "<button id=\"btn-13\">\n  <div class=\"blob1\"></div>\n  <div class=\"inner\">Shine</div>\n</button>",
+    "css": "#btn-13 {\n  cursor: pointer;\n  font-size: 1.4rem;\n  border-radius: 16px;\n  border: none;\n  padding: 2px;\n  background: radial-gradient(circle 80px at 80% -10%, #ffffff, #181b1b);\n  position: relative;\n}\n\n#btn-13::after {\n  content: \"\";\n  position: absolute;\n  width: 65%;\n  height: 60%;\n  border-radius: 120px;\n  top: 0;\n  right: 0;\n  box-shadow: 0 0 20px #ffffff38;\n  z-index: -1;\n}\n\n.blob1 {\n  position: absolute;\n  width: 70px;\n  height: 100%;\n  border-radius: 16px;\n  bottom: 0;\n  left: 0;\n  background: radial-gradient(\n    circle 60px at 0% 100%,\n    #3fe9ff,\n    #0000ff80,\n    transparent\n  );\n  box-shadow: -10px 10px 30px #0051ff2d;\n}\n\n.inner {\n  padding: 14px 25px;\n  border-radius: 14px;\n  color: #fff;\n  z-index: 3;\n  position: relative;\n  background: radial-gradient(circle 80px at 80% -50%, #777777, #0f1111);\n}\n\n.inner::before {\n  content: \"\";\n  width: 100%;\n  height: 100%;\n  left: 0;\n  top: 0;\n  border-radius: 14px;\n  background: radial-gradient(\n    circle 60px at 0% 100%,\n    #00e1ff1a,\n    #0000ff11,\n    transparent\n  );\n  position: absolute;\n}"
+  },
+  {
+    "id": "btn-14",
+    "title": "Stacked Shadow Drop Button",
+    "description": "Bold stacked shadow effect that compresses on hover and click.",
+    "html": "<button id=\"btn-14\">Drop</button>",
+    "css": "#btn-14 {\n  padding: 17px 40px;\n  border-radius: 10px;\n  border: 0;\n  background-color: rgb(255, 56, 86);\n  letter-spacing: 1.5px;\n  font-size: 15px;\n  transition: all 0.3s ease;\n  box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;\n  color: hsl(0, 0%, 100%);\n  cursor: pointer;\n}\n\n#btn-14:hover {\n  box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;\n}\n\n#btn-14:active {\n  background-color: rgb(255, 56, 86);\n  box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;\n  transform: translateY(5px);\n  transition: 200ms;\n}"
+  },
+  {
+    "id": "btn-15",
+    "title": "Floating Frame Button",
+    "description": "Inner element lifts away from outer frame on hover playfully.",
+    "html": "<button id=\"btn-15\"><span>Float</span></button>",
+    "css": "#btn-15 {\n  padding: 0.1em 0.25em;\n  width: 13em;\n  height: 4.2em;\n  background-color: #212121;\n  border: 0.08em solid #fff;\n  border-radius: 0.3em;\n  font-size: 12px;\n  cursor: pointer;\n}\n\n#btn-15 span {\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  bottom: 0.4em;\n  width: 8.25em;\n  height: 2.5em;\n  background-color: #212121;\n  border-radius: 0.2em;\n  font-size: 1.5em;\n  color: #fff;\n  border: 0.08em solid #fff;\n  box-shadow: 0 0.4em 0.1em 0.019em #fff;\n}\n\n#btn-15 span:hover {\n  transition: all 0.5s;\n  transform: translate(0, 0.4em);\n  box-shadow: 0 0 0 0 #fff;\n}\n\n#btn-15 span:not(hover) {\n  transition: all 1s;\n}"
   }
 ]
