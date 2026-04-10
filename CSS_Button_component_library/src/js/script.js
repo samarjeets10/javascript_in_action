@@ -1,4 +1,18 @@
 
+import { featchbutton } from "./services/fetchButton";
+import { renderButtons } from "./render/renderButton";
+
+
+async function init() {
+    const container = document.querySelector('.components__container');
+
+    const buttons = await featchbutton();
+    renderButtons(buttons, container);
+
+    console.log("Init is running!!");
+}
+
+init();
 
 // Dark Mode Switcher 
 
@@ -30,60 +44,60 @@ function darkModeOff() {
 
 // Like Mechanism :
 
-// window.addEventListener('load', function() {
-// 
-//     const allLikeBtn = document.querySelectorAll('.right__cta i');
-// 
-//     allLikeBtn.forEach(function(button) {
-//         const postId = button.getAttribute('postId');
-//         loadLike(button, postId);
-//     })
-// });
-// 
-// 
-// document.addEventListener('click', function(event) {
-//     const button = event.target.closest('.right__cta');
-//     if(button) {
-//         toggleLike(button, postId);
-//     }
-// });
-// 
-// 
-// function toggleLike(button, postId) {
-// 
-//     // get saved data :
-// 
-//     let likeData = JSON.parse(localStorage.getItem(postId)) || {count: 0, liked: false};
-// 
-//     // if alredy liked 
-// 
-//     if (likeData.liked) {
-//         likeData.count--;
-//         likeData.liked = false;
-//     } else {    // if not Liked 
-//         likeData.count++;
-//         likeData.liked = true;
-//     }
-// 
-//     localStorage.setItem(postId, JSON.stringify(likeData));
-//     loadLike(button, postId);
-// }
-// 
-// 
-// function loadLike(button, postId) {
-// 
-//     const likeData = JSON.parse(localStorage.getItem(postId)) || {count: 0, liked: false};
-// 
-//     button.querySelector('.count').innerText = likeData.count;
-// 
-//     // change btn style :
-// 
-//     if (likeData.liked) {
-//         button.classList.add('like');
-//     } else {
-//         button.classList.remove('like');
-//     }
-// }
+window.addEventListener('load', function() {
+
+    const allLikeBtn = document.querySelectorAll('.right__cta i');
+
+    allLikeBtn.forEach(function(button) {
+        const postId = button.getAttribute('postId');
+        loadLike(button, postId);
+    })
+});
+
+
+document.addEventListener('click', function(event) {
+    const button = event.target.closest('.right__cta');
+    if(button) {
+        toggleLike(button, postId);
+    }
+});
+
+
+function toggleLike(button, postId) {
+
+    // get saved data :
+
+    let likeData = JSON.parse(localStorage.getItem(postId)) || {count: 0, liked: false};
+
+    // if alredy liked 
+
+    if (likeData.liked) {
+        likeData.count--;
+        likeData.liked = false;
+    } else {    // if not Liked 
+        likeData.count++;
+        likeData.liked = true;
+    }
+
+    localStorage.setItem(postId, JSON.stringify(likeData));
+    loadLike(button, postId);
+}
+
+
+function loadLike(button, postId) {
+
+    const likeData = JSON.parse(localStorage.getItem(postId)) || {count: 0, liked: false};
+
+    button.querySelector('.count').innerText = likeData.count;
+
+    // change btn style :
+
+    if (likeData.liked) {
+        button.classList.add('like');
+    } else {
+        button.classList.remove('like');
+    }
+}
 
 
 
@@ -119,7 +133,7 @@ window.addEventListener('wheel', (event) => {
 
 
 // Card creation and data fetching :
-
+// 
 // get data :
 
 async function getCardData() {
@@ -172,8 +186,6 @@ async function init() {
     
 
 init();
-
-
 
 
 

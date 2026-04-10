@@ -97,44 +97,39 @@ Handles navigation between pages.
 ---
 
 ## Folder Structure
+
 ````
-CSS_Button_components_library/
-├── data/
-│ └── buttons.json
 
-├── pages/
-│ ├── index.html
-│ └── preview.html
+shipUI/
+├── index.html
+│
+├──📁 data/
+    │   └── buttons.json          # Buttons dataest
+    ├── 📁 assets/
+│   ├── 📁 images/                # Icons, logos (future use)
+│   └── 📁 icons/                 # SVG icons (future use)
+│
+├── 📁 src/
+│   ├── 📁 css/
+│   │   ├── global.css            # Global styles, variables
+│   │   ├── buttons.css           # All button component styles
+│   │   └── components.css        # Other components (future)
+│   │
+│   └── 📁 js/
+│       ├── main.js               # App initialization
+│       ├── 📁 modules/
+│       │   ├── darkMode.js       # Dark mode toggle logic
+│       │   ├── likeSystem.js     # Like/heart functionality
+│       │   ├── codePopup.js      # Copy code popup logic
+│       │   └── cardRenderer.js   # Card creation logic
+│       ├── 📁 services/
+│       │   └── dataFetcher.js    # JSON fetching logic
+│       └── 📁 utils/
+│           └── helpers.js        # Reusable utility functions
+│
+└── README.md
 
-├── styles/
-│ ├── global.css
-│ ├── buttons.css
-│ └── components/
-│ └── card.css
 
-├── scripts/
-│ ├── main.js
-│ ├── router.js
-│
-│ ├── api/
-│ │ └── fetchButtons.js
-│
-│ ├── components/
-│ │ ├── Card.js
-│ │ └── ButtonPreview.js
-│
-│ ├── render/
-│ │ ├── renderCards.js
-│ │ └── renderPreview.js
-│
-│ ├── utils/
-│ │ ├── createElement.js
-│ │ └── copyToClipboard.js
-│
-│ └── state/
-│ └── likes.js
-
-└── assets/
 ````
 ---
 
