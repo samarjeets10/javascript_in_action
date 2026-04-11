@@ -1,41 +1,49 @@
 
-async function init() {
-    const container = document.querySelector('.components__container');
+import { initDarkMode } from "./modules/darkMode.js";
 
-    const buttons = await featchbutton();
-    renderButtons(buttons, container);
+// Dark Mode Switcher :
 
-    console.log("Init is running!!");
-}
+initDarkMode();
 
-init();
+// async function init() {
+//     const container = document.querySelector('.components__container');
+// 
+//     const buttons = await featchbutton();
+//     renderButtons(buttons, container);
+// 
+//     console.log("Init is running!!");
+// }
 
-// Dark Mode Switcher 
+// init();
 
-const button = document.querySelector(".inner__box");
-const body = document.querySelector("body");
 
-let modeOn = false;
 
-button.addEventListener('click', ()=> {
-    if (modeOn === false) {
-        darkModeOn();
-        body.classList.add('mode__dark');
-    } else {
-        darkModeOff();
-        body.classList.remove('mode__dark');
-    }
-});
 
-function darkModeOn() {
-    button.classList.add('dark');
-    modeOn = true;
-}
 
-function darkModeOff() {
-    button.classList.remove('dark');
-    modeOn = false;
-}
+// const button = document.querySelector(".inner__box");
+// const body = document.querySelector("body");
+// 
+// let modeOn = false;
+// 
+// button.addEventListener('click', ()=> {
+//     if (modeOn === false) {
+//         darkModeOn();
+//         body.classList.add('mode__dark');
+//     } else {
+//         darkModeOff();
+//         body.classList.remove('mode__dark');
+//     }
+// });
+// 
+// function darkModeOn() {
+//     button.classList.add('dark');
+//     modeOn = true;
+// }
+// 
+// function darkModeOff() {
+//     button.classList.remove('dark');
+//     modeOn = false;
+// }
 
 
 // Like Mechanism :
