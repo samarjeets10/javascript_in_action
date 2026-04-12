@@ -1,9 +1,39 @@
 
 import { initDarkMode } from "./modules/darkMode.js";
+import { dataFetcher } from "./services/dataFetcher.js";
+
+
+
+async function initializeApp() {
+     try {
+
+        // phase 01 : Dark Mode or theme :
+
+        const ThemeMode = await initDarkMode();
+        console.log();
+
+        // Phase 02 : Featching Buttons Data :
+
+        const ButtonsDataFetch = await dataFetcher();
+
+
+     } catch (error) {
+        console.log("Error :", error.message);
+     }
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener('DOMContentLoaded', initializeApp);
+} else {
+    initializeApp();
+}
+
+
+
 
 // Dark Mode Switcher :
 
-initDarkMode();
+
 
 // async function init() {
 //     const container = document.querySelector('.components__container');
@@ -17,33 +47,6 @@ initDarkMode();
 // init();
 
 
-
-
-
-// const button = document.querySelector(".inner__box");
-// const body = document.querySelector("body");
-// 
-// let modeOn = false;
-// 
-// button.addEventListener('click', ()=> {
-//     if (modeOn === false) {
-//         darkModeOn();
-//         body.classList.add('mode__dark');
-//     } else {
-//         darkModeOff();
-//         body.classList.remove('mode__dark');
-//     }
-// });
-// 
-// function darkModeOn() {
-//     button.classList.add('dark');
-//     modeOn = true;
-// }
-// 
-// function darkModeOff() {
-//     button.classList.remove('dark');
-//     modeOn = false;
-// }
 
 
 // Like Mechanism :

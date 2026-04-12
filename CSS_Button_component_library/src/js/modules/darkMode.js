@@ -18,6 +18,10 @@ export async function initDarkMode() {
         if (!slider) throw new Error ('slider not found!');
         if (!body) throw new Error ('body not found!');
 
+        setTimeout(() => {
+            body.classList.remove('preload');
+        }, 50);
+
         sliderBtn.addEventListener('click', () => {
             if (!darkModeEnabled) {
                 darkModeOn();

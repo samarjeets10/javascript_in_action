@@ -13,6 +13,11 @@
     --gray-dark: #2C2C2C;
 }
 
+
+.preload * {
+    transition: none !important;
+}
+
 .mode__dark {
     --background: #1a1a1a;
     --text-primary: #F7F9FD;
@@ -230,7 +235,7 @@ nav {
 }
 
 .preview__box {
-    height: 280px;
+    height: 320px;
     width: 380px;
     position: relative;
     border: 2px solid var(--text-primary);
