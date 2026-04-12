@@ -235,8 +235,9 @@ nav {
 }
 
 .preview__box {
-    height: 320px;
-    width: 380px;
+    height: 280px;
+    width: 100%;
+    /* width: 380px; */
     position: relative;
     border: 2px solid var(--text-primary);
     border-radius: 0.4rem;

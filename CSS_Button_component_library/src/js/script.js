@@ -1,20 +1,23 @@
 
 import { initDarkMode } from "./modules/darkMode.js";
 import { dataFetcher } from "./services/dataFetcher.js";
-
+import { cardRenderar } from "./modules/cardRenderar.js";
 
 
 async function initializeApp() {
      try {
 
         // phase 01 : Dark Mode or theme :
-
         const ThemeMode = await initDarkMode();
         console.log();
 
         // Phase 02 : Featching Buttons Data :
+        const buttonData = await dataFetcher();
+        const wrapper = document.querySelector('.components__container');
 
-        const ButtonsDataFetch = await dataFetcher();
+        // Phase 03 : Card rendering :
+        await cardRenderar(buttonData, wrapper);
+
 
 
      } catch (error) {
@@ -27,25 +30,6 @@ if (document.readyState === "loading") {
 } else {
     initializeApp();
 }
-
-
-
-
-// Dark Mode Switcher :
-
-
-
-// async function init() {
-//     const container = document.querySelector('.components__container');
-// 
-//     const buttons = await featchbutton();
-//     renderButtons(buttons, container);
-// 
-//     console.log("Init is running!!");
-// }
-
-// init();
-
 
 
 
@@ -138,61 +122,6 @@ window.addEventListener('wheel', (event) => {
     }
 });
 
-
-// Card creation and data fetching :
-// 
-// get data :
-
-async function getCardData() {
-    const response = await fetch('../data/buttonsData.json');
-    const data = await response.json();
-    console.log(data);
-
-    return data;
-}
-
-const wrapper = document.querySelector('.components__container');
-
-console.log(wrapper);
-
-function createCard(data) {
-
-    data.forEach(button => {
-        const card = document.createElement('div');
-
-        card.innerHTML = `
-                            <div class="card">
-                                <div class="preview__box">
-                                    <div class="copy__code">
-                                        <i class="ri-code-s-slash-line"></i>
-                                        <p>get code</p>
-                                    </div>
-                                    ${button.html}
-                                </div>
-
-                                <div class="card__text__content">
-                                    <div class="left__text">
-                                        <h3>${button.name}</h3>
-                                        <p>${button.description}</p>
-                                    </div>
-                                    <div class="right__cta" postId="post1">
-                                        <i class="fa fa-heart heart-fa"></i>
-                                        <span class="count">0</span>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-        wrapper.appendChild(card);
-    });
-}
-
-async function init() {
-    const buttonData = await getCardData();
-    createCard(buttonData);
-}
-    
-
-init();
 
 
 

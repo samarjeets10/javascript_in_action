@@ -4,28 +4,32 @@
     "title": "Push Button with Offset Shadow",
     "description": "Tactile button with offset shadow that collapses on click.",
     "html": "<button id=\"btn-01\">Click Me</button>",
-    "css": "#btn-01 {\n    padding: 1rem 2rem;\n    font-size: 1.1rem;\n    border: 2px solid #fff;\n    background-color: transparent;\n    color: #fff;\n    border-radius: 0.6rem;\n    box-shadow: 3px 3px 0 #fff;\n    cursor: pointer;\n}\n\n#btn-01:active {\n    transform: translate(2px, 2px);\n    box-shadow: none;\n}"
+    "css": "#btn-01 {\n    padding: 1rem 2rem;\n    font-size: 1.1rem;\n    border: 2px solid #fff;\n    background-color: transparent;\n    color: #fff;\n    border-radius: 0.6rem;\n    box-shadow: 3px 3px 0 #fff;\n    cursor: pointer;\n}\n\n#btn-01:active {\n    transform: translate(2px, 2px);\n    box-shadow: none;\n}",
+    "background": "#000"
   },
   {
     "id": "btn-02",
     "title": "Red Glow Fill Button",
     "description": "Fills with red color on hover with glowing border effect.",
     "html": "<button id=\"btn-02\">Hover Me</button>",
-    "css": "#btn-02 {\n    padding: 1rem 2rem;\n    position: relative;\n    background-color: transparent;\n    border: 2px solid red;\n    border-radius: 12px;\n    font-size: 1.1rem;\n    font-weight: 600;\n    color: #fff;\n    cursor: pointer;\n    z-index: 100;\n    overflow: hidden;\n    transition: all 0.3s ease;\n}\n\n#btn-02:hover {\n    box-shadow: 0 0 30px red;\n}\n\n#btn-02::before {\n    content: '';\n    position: absolute;\n    height: 100%;\n    width: 100%;\n    top: 0;\n    left: -100%;\n    background-color: red;\n    z-index: -1;\n    transition: all 0.3s ease;\n}\n\n#btn-02:hover::before {\n    left: 0;\n}"
+    "css": "#btn-02 {\n    padding: 1rem 2rem;\n    position: relative;\n    background-color: transparent;\n    border: 2px solid red;\n    border-radius: 12px;\n    font-size: 1.1rem;\n    font-weight: 600;\n    color: #fff;\n    cursor: pointer;\n    z-index: 100;\n    overflow: hidden;\n    transition: all 0.3s ease;\n}\n\n#btn-02:hover {\n    box-shadow: 0 0 30px red;\n}\n\n#btn-02::before {\n    content: '';\n    position: absolute;\n    height: 100%;\n    width: 100%;\n    top: 0;\n    left: -100%;\n    background-color: red;\n    z-index: -1;\n    transition: all 0.3s ease;\n}\n\n#btn-02:hover::before {\n    left: 0;\n}",
+    "background": "#000"
   },
   {
     "id": "btn-03",
     "title": "Top-Down Fill Button",
     "description": "Smooth fill animation from top to bottom with glowing effect.",
     "html": "<button id=\"btn-03\">Explore</button>",
-    "css": "#btn-03 {\n    padding: 1rem 2rem;\n    position: relative;\n    font-size: 1.1rem;\n    font-weight: 600;\n    background-color: transparent;\n    border: 2px solid #fff;\n    border-radius: 10px;\n    color: #fff;\n    cursor: pointer;\n    z-index: 100;\n    transition: all 0.3s ease;\n    overflow: hidden;\n}\n\n#btn-03:hover {\n    color: #000;\n    box-shadow: 0 0 30px #fff;\n}\n\n#btn-03::after {\n    content: '';\n    position: absolute;\n    height: 100%;\n    width: 100%;\n    top: -100%;\n    left: 0;\n    background: #fff;\n    z-index: -1;\n    transition: all 0.3s ease;\n}\n\n#btn-03:hover::after {\n    top: 0;\n}"
+    "css": "#btn-03 {\n    padding: 1rem 2rem;\n    position: relative;\n    font-size: 1.1rem;\n    font-weight: 600;\n    background-color: transparent;\n    border: 2px solid #fff;\n    border-radius: 10px;\n    color: #fff;\n    cursor: pointer;\n    z-index: 100;\n    transition: all 0.3s ease;\n    overflow: hidden;\n}\n\n#btn-03:hover {\n    color: #000;\n    box-shadow: 0 0 30px #fff;\n}\n\n#btn-03::after {\n    content: '';\n    position: absolute;\n    height: 100%;\n    width: 100%;\n    top: -100%;\n    left: 0;\n    background: #fff;\n    z-index: -1;\n    transition: all 0.3s ease;\n}\n\n#btn-03:hover::after {\n    top: 0;\n}",
+    "background": "#000"
   },
   {
     "id": "btn-04",
     "title": "Rainbow Nested Shadows Button",
     "description": "Colorful nested shadows (red, yellow, green, blue) appear on hover.",
     "html": "<button id=\"btn-04\">Rainbow</button>",
-    "css": "#btn-04 {\n  width: 170px;\n  height: 60px;\n  font-size: 18px;\n  background: #fff;\n  border: none;\n  border-radius: 50px;\n  color: #000;\n  outline: none;\n  cursor: pointer;\n  transition: all 0.4s;\n}\n\n#btn-04:hover {\n  box-shadow: inset 0 0 0 4px #ef476f, \n              inset 0 0 0 8px #ffd166, \n              inset 0 0 0 12px #06d6a0,\n              inset 0 0 0 16px #118ab2;\n  background: #073b4c;\n  color: #fff;\n}"
+    "css": "#btn-04 {\n  width: 170px;\n  height: 60px;\n  font-size: 18px;\n  background: #fff;\n  border: none;\n  border-radius: 50px;\n  color: #000;\n  outline: none;\n  cursor: pointer;\n  transition: all 0.4s;\n}\n\n#btn-04:hover {\n  box-shadow: inset 0 0 0 4px #ef476f, \n              inset 0 0 0 8px #ffd166, \n              inset 0 0 0 12px #06d6a0,\n              inset 0 0 0 16px #118ab2;\n  background: #073b4c;\n  color: #fff;\n}",
+    "background": "#000"
   },
   {
     "id": "btn-05",
