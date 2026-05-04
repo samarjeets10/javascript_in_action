@@ -16,6 +16,12 @@ export async function cardRenderar(buttonsData, wrapper) {
         buttonsData.forEach((button) => {
             const card = document.createElement('div');
 
+            let description = button.description;
+            
+            if (description.length > 50) {
+                description = description.substring(0, 50) + '...';
+            }
+
             card.innerHTML = `
                                 <div class="card" data-key="${button.id}">
 
@@ -34,7 +40,7 @@ export async function cardRenderar(buttonsData, wrapper) {
                                 <div class="card__text__content">
                                     <div class="left__text">
                                         <h3>${button.title}</h3>
-                                        <p>${button.description}</p>
+                                        <p>${description}</p>
                                     </div>
                                     <div class="right__cta" postId="${button.id}">
                                         <i class="fa fa-heart heart-fa"></i>

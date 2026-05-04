@@ -11,6 +11,9 @@
     --gray-light: #ccc;
     /* --gray-dark: #bbbb; */
     --gray-dark: #2C2C2C;
+
+    /* Preview background */
+    --prev-bg: #a0a0a0;
 }
 
 
@@ -25,6 +28,9 @@
     --gray-light: #ccc;
     /* --gray-dark: #bbbb; */
     --gray-dark: #2C2C2C;
+    
+    /* Preview background */
+    --prev-bg: #1a1a1a;
 }
 
 .right__cta.liked i {
@@ -161,9 +167,10 @@ nav {
     margin: 1.4rem 0;
     padding: 0.6rem 1.4rem;
     font-size: 1.2rem;
+    font-weight: 600;
     background-color: var(--background);
     border: 2px solid var(--text-primary);
-    border-radius: 0.4rem;
+    border-radius: 0.6rem;
     box-shadow: 2px 2px 0px var(--text-primary);
     cursor: pointer;
 }
@@ -191,7 +198,6 @@ nav {
 
 .card {
     padding: 0.8rem;
-    width: fit-content;
     border: 2px solid var(--text-primary);
     border-radius: 0.4rem;
 }
@@ -202,6 +208,7 @@ nav {
     position: relative;
     border: 2px solid var(--text-primary);
     border-radius: 0.4rem;
+    background-color: var(--prev-bg);
 
     display: flex;
     align-items: center;
@@ -238,6 +245,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 1.2rem;
 }
 
 .left__text {
