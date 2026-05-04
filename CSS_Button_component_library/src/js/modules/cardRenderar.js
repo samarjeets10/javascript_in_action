@@ -23,7 +23,7 @@ export async function cardRenderar(buttonsData, wrapper) {
                                     ${button.css}
                                 </style>
 
-                                <div class="preview__box" style="background-color:${button.background}">
+                                <div class="preview__box">
                                     <div class="copy__code">
                                         <i class="ri-code-s-slash-line"></i>
                                         <p>get code</p>

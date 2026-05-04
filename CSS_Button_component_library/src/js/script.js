@@ -18,7 +18,9 @@ async function initializeApp() {
         // Phase 03 : Card rendering :
         await cardRenderar(buttonData, wrapper);
 
+        // Phase 04 : Like Mechanism :
 
+        setUpLikes();
 
      } catch (error) {
         console.log("Error :", error.message);
@@ -32,96 +34,58 @@ if (document.readyState === "loading") {
 }
 
 
-
-// Like Mechanism :
-
-window.addEventListener('load', function() {
-
-    const allLikeBtn = document.querySelectorAll('.right__cta i');
-
-    allLikeBtn.forEach(function(button) {
-        const postId = button.getAttribute('postId');
-        loadLike(button, postId);
-    })
-});
+// Likes Feature :
 
 
-document.addEventListener('click', function(event) {
-    const button = event.target.closest('.right__cta');
-    if(button) {
-        toggleLike(button, postId);
-    }
-});
+function setUpLikes() {
+
+    const heartButton = document.querySelectorAll('.right__cta');
+
+    heartButton.forEach((button) => {
+        const buttonId = button.getAttribute('postId');
+        const count = button.querySelector('.count');
+
+        // Load like counts from localstorage :
+
+        const savedLikes = localStorage.getItem(`likes_${buttonId}`);
+        const likeCount = savedLikes ? parseInt(savedLikes) : 0;
+        count.textContent = likeCount;
+
+        // if user already liked :
+
+        const userLiked = localStorage.getItem(`liked_${buttonId}`);
+
+        if (userLiked === 'true') {
+            button.classList.add('liked');
+        }
 
 
-function toggleLike(button, postId) {
+        // clike handler :
 
-    // get saved data :
+        button.addEventListener('click', () => {
 
-    let likeData = JSON.parse(localStorage.getItem(postId)) || {count: 0, liked: false};
-
-    // if alredy liked 
-
-    if (likeData.liked) {
-        likeData.count--;
-        likeData.liked = false;
-    } else {    // if not Liked 
-        likeData.count++;
-        likeData.liked = true;
-    }
-
-    localStorage.setItem(postId, JSON.stringify(likeData));
-    loadLike(button, postId);
-}
+            const currentLikes = parseInt(count.textContent);
+            const isLiked = button.classList.contains('liked');
 
 
-function loadLike(button, postId) {
+            if (isLiked) {
+                button.classList.remove('liked');
+                count.textContent = currentLikes - 1;
 
-    const likeData = JSON.parse(localStorage.getItem(postId)) || {count: 0, liked: false};
+                localStorage.setItem(`likes_${buttonId}`, currentLikes - 1);
+                localStorage.setItem(`liked_${buttonId}`, 'false');
+            } else {
+                button.classList.add('liked');
+                count.textContent = currentLikes + 1;
 
-    button.querySelector('.count').innerText = likeData.count;
-
-    // change btn style :
-
-    if (likeData.liked) {
-        button.classList.add('like');
-    } else {
-        button.classList.remove('like');
-    }
-}
-
-
-
-// GSAP ANIMATION FOR MARQUE TICKERS :
-
-window.addEventListener('wheel', (event) => {
-    if (event.deltaY > 0) {
-        gsap.to(".ticker__text", {
-            transform: "translateX(-400%)",
-            duration: 8,
-            repeat: -1,
-            ease: "none"
+                localStorage.setItem(`likes_${buttonId}`, currentLikes + 1);
+                localStorage.setItem(`liked_${buttonId}`, 'true');
+            }
         });
+    });
 
-        gsap.to(".ticker__text i", {
-            rotate: 180,
-            ease: "power-2"
-        })
-    } else {
-        gsap.to(".ticker__text", {
-            transform: "translateX(-100%)",
-            duration: 2,
-            repeat: -1,
-            ease: "none"
-        });
-
-        gsap.to(".ticker__text i", {
-            rotate: 0,
-            ease: "power-2"
-        })
-    }
-});
-
+    console.log('Likes setup complete...');
+}
 
 
 
