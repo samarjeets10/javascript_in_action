@@ -105,7 +105,7 @@ function setupGetCode(buttonsData) {
   const getCodeButtons = document.querySelectorAll('.copy__code');
  
   getCodeButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', async () => {
       // Get the postId from parent .right__cta
       const postId = btn.closest('.card').querySelector('.right__cta').getAttribute('postId');
       
@@ -113,33 +113,124 @@ function setupGetCode(buttonsData) {
       const buttonData = buttonsData.find(b => b.id === postId);
 
       if (buttonData) {
-        htmlCodeDiv.textContent = buttonData.html;
-        cssCodeDiv.textContent = buttonData.css;
-        btnTitle.textContent = buttonData.title;
-        btnDesc.textContent = buttonData.description;
-        codeOverlay.classList.add('active');
+        try {
+          // Format and highlight code
+          const formattedHtml = await formatAndHighlight(buttonData.html, 'html');
+          const formattedCss = await formatAndHighlight(buttonData.css, 'css');
+          
+          htmlCodeDiv.innerHTML = formattedHtml;
+          cssCodeDiv.innerHTML = formattedCss;
+          
+          // Store original unformatted code for copying
+          htmlCodeDiv.dataset.originalCode = buttonData.html;
+          cssCodeDiv.dataset.originalCode = buttonData.css;
+          
+          btnTitle.textContent = buttonData.title;
+          btnDesc.textContent = buttonData.description;
+          codeOverlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        } catch (error) {
+          console.error('Error formatting code:', error);
+          // Fallback to plain text if formatting fails
+          htmlCodeDiv.textContent = buttonData.html;
+          cssCodeDiv.textContent = buttonData.css;
+          codeOverlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
       }
     });
   });
 
   codeClose.addEventListener('click', () => {
     codeOverlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
   });
 
   codeOverlay.addEventListener('click', (e) => {
     if (e.target === codeOverlay) {
       codeOverlay.classList.remove('active');
+      document.body.style.overflow = 'auto';
     }
   });
 
   copyHtmlBtn.addEventListener('click', () => {
-    copyToClipboard(htmlCodeDiv.textContent, copyHtmlBtn);
+    const originalCode = htmlCodeDiv.dataset.originalCode || getPlainText(htmlCodeDiv);
+    copyToClipboard(originalCode, copyHtmlBtn);
   });
 
   copyCssBtn.addEventListener('click', () => {
-    copyToClipboard(cssCodeDiv.textContent, copyCssBtn);
+    const originalCode = cssCodeDiv.dataset.originalCode || getPlainText(cssCodeDiv);
+    copyToClipboard(originalCode, copyCssBtn);
   });
  
+}
+
+// Format code with Prettier and highlight with Highlight.js
+async function formatAndHighlight(code, language) {
+  try {
+    // Format code with Prettier - matching VS Code default settings
+    let formatted = code;
+    
+    if (language === 'html') {
+      formatted = await prettier.format(code, {
+        parser: 'html',
+        plugins: [prettierPlugins.html],
+        printWidth: 80,
+        tabWidth: 2,
+        useTabs: false,
+        semi: true,
+        singleQuote: false,
+        trailingComma: 'es5',
+        bracketSpacing: true,
+        arrowParens: 'always',
+        htmlWhitespaceSensitivity: 'css'
+      });
+    } else if (language === 'css') {
+      formatted = await prettier.format(code, {
+        parser: 'css',
+        plugins: [prettierPlugins.css],
+        printWidth: 80,
+        tabWidth: 2,
+        useTabs: false,
+        semi: true,
+        singleQuote: false,
+        trailingComma: 'es5'
+      });
+    }
+    
+
+    const preElement = document.createElement('pre');
+    preElement.innerHTML = '<code class="language-' + language + '">' + 
+      hljs.highlight(formatted.trim(), { language }).value + 
+      '</code>';
+    
+    return preElement.innerHTML;
+  } catch (error) {
+    console.error('Formatting error:', error);
+    // Fallback to just highlighting if prettier fails
+    const preElement = document.createElement('pre');
+    preElement.innerHTML = '<code class="language-' + language + '">' + 
+      hljs.highlight(code.trim(), { language }).value + 
+      '</code>';
+    
+    return preElement.innerHTML;
+  }
+}
+
+function getPlainText(element) {
+  if (element.dataset.originalCode) {
+    return element.dataset.originalCode;
+  }
+
+  const clone = element.cloneNode(true);
+  const spans = clone.querySelectorAll('span');
+  spans.forEach(span => {
+    const text = document.createTextNode(span.textContent);
+    span.replaceWith(text);
+  });
+  
+  const codeTag = clone.querySelector('code');
+  return (codeTag ? codeTag.textContent : clone.textContent).trim();
 }
  
 function copyToClipboard(text, button) {
