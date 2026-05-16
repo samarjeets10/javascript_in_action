@@ -19,8 +19,10 @@ async function initializeApp() {
         await cardRenderar(buttonData, wrapper);
 
         // Phase 04 : Like Mechanism :
-
         setUpLikes();
+
+        // Phase 05 : Get Code Mechanism:
+        setupGetCode(buttonData);
 
      } catch (error) {
         console.log("Error :", error.message);
@@ -87,5 +89,68 @@ function setUpLikes() {
     console.log('Likes setup complete...');
 }
 
+
+
+function setupGetCode(buttonsData) {
+ 
+  const codeOverlay = document.getElementById('codeOverlay');
+  const codeClose = document.getElementById('codeClose');
+  const copyHtmlBtn = document.getElementById('copyHtml');
+  const copyCssBtn = document.getElementById('copyCss');
+  const htmlCodeDiv = document.getElementById('htmlCode');
+  const cssCodeDiv = document.getElementById('cssCode');
+  const btnTitle = document.getElementById('btn-title');
+  const btnDesc = document.getElementById('btn-description');
+ 
+  const getCodeButtons = document.querySelectorAll('.copy__code');
+ 
+  getCodeButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      // Get the postId from parent .right__cta
+      const postId = btn.closest('.card').querySelector('.right__cta').getAttribute('postId');
+      
+      // Find matching button data
+      const buttonData = buttonsData.find(b => b.id === postId);
+
+      if (buttonData) {
+        htmlCodeDiv.textContent = buttonData.html;
+        cssCodeDiv.textContent = buttonData.css;
+        btnTitle.textContent = buttonData.title;
+        btnDesc.textContent = buttonData.description;
+        codeOverlay.classList.add('active');
+      }
+    });
+  });
+
+  codeClose.addEventListener('click', () => {
+    codeOverlay.classList.remove('active');
+  });
+
+  codeOverlay.addEventListener('click', (e) => {
+    if (e.target === codeOverlay) {
+      codeOverlay.classList.remove('active');
+    }
+  });
+
+  copyHtmlBtn.addEventListener('click', () => {
+    copyToClipboard(htmlCodeDiv.textContent, copyHtmlBtn);
+  });
+
+  copyCssBtn.addEventListener('click', () => {
+    copyToClipboard(cssCodeDiv.textContent, copyCssBtn);
+  });
+ 
+}
+ 
+function copyToClipboard(text, button) {
+  navigator.clipboard.writeText(text).then(() => {
+    const originalText = button.innerHTML;
+    button.innerHTML = `<i class="ri-file-check-line"></i> copied`;
+ 
+    setTimeout(() => {
+      button.innerHTML = originalText;
+    }, 2000);
+  });
+}
 
 

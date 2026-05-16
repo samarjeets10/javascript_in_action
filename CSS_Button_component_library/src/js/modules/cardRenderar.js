@@ -32,7 +32,7 @@ export async function cardRenderar(buttonsData, wrapper) {
                                 <div class="preview__box">
                                     <div class="copy__code">
                                         <i class="ri-code-s-slash-line"></i>
-                                        <p>get code</p>
+                                        <p>code</p>
                                     </div>
                                     ${button.html}
                                 </div>

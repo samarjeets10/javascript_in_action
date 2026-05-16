@@ -9,70 +9,102 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body class="preload">
+<body>
 
-    <div class="popup__window">
-        <div class="left__block"></div>
-        <div class="right__block"></div>
-    </div>
+    <div class="main__container">
 
-    <nav>
-        <div class="nav_bar">
-            <div class="logo">
-                <h1>shipUI.</h1>
-            </div>
+        <div class="popup__window">
+            <div class="left__block"></div>
+            <div class="right__block"></div>
+        </div>
 
-            <div class="dark__mode">
-                <i class="ri-sun-line"></i>
-                <div class="outer__box">
-                    <div class="inner__box"></div>
+        <nav>
+            <div class="nav_bar">
+                <div class="logo">
+                    <h1>shipUI.</h1>
                 </div>
-                <i class="ri-moon-line"></i>
+
+                <div class="dark__mode">
+                    <i class="ri-sun-line"></i>
+                    <div class="outer__box">
+                        <div class="inner__box"></div>
+                    </div>
+                    <i class="ri-moon-line"></i>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <section>
+            <div class="hero__container">
+                <div class="hero__text__content">
+                    <h1 class="hero__title">Speed up your UI with reusable CSS button components</h1>
+                    <p>A collection of clean, responsive, and fully customizable button to save time, reduce redundancy, and improve consistancy.</p>
+
+                    <button class="cta__btn">Explore <i class="ri-arrow-right-long-fill"></i></button>
+                </div>
+            </div>
+
+            </section>
+
+            <section class="components__section">
+                
+                <div class="components__container">
+
+                    <!-- <div class="card">
+                        <div class="preview__box">
+                            <div class="copy__code">
+                                <i class="ri-code-s-slash-line"></i>
+                                <p>get code</p>
+                            </div>
+                            <button id="btn-05">hover me</button>
+                        </div>
+
+                        <div class="card__text__content">
+                            <div class="left__text">
+                                <h3>Modern telescopic button</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                            </div>
+                            <div class="right__cta" postId="post1">
+                                <i class="fa fa-heart heart-fa"></i>
+                                <span class="count">0</span>
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
+            </section>
+        </main>
+
+        <div class="code-overlay" id="codeOverlay">
+            <div class="code-modal">
+                <button class="code-close" id="codeClose">
+                    <i class="ri-close-line"></i>
+                </button>
+
+                <div class="component-text">
+                    <h2 id="btn-title"></h2>
+                    <p id="btn-description"></p>
+                </div>
+                
+                <div class="code-section">
+                    <h3>HTML Code</h3>
+                    <div class="code-block" id="htmlCode"></div>
+                    <button class="copy-btn" id="copyHtml">
+                        <i class="ri-file-copy-line"></i> copy
+                    </button>
+                </div>
+
+                <div class="code-section">
+                    <h3>CSS Code</h3>
+                    <div class="code-block" id="cssCode"></div>
+                    <button class="copy-btn" id="copyCss">
+                        <i class="ri-file-copy-line"></i> copy
+                    </button>
+                </div>
             </div>
         </div>
-    </nav>
-
-    <main>
-        <section>
-        <div class="hero__container">
-            <div class="hero__text__content">
-                <h1 class="hero__title">Speed up your UI with reusable CSS button components</h1>
-                <p>A collection of clean, responsive, and fully customizable button to save time, reduce redundancy, and improve consistancy.</p>
-
-                <button class="cta__btn">Explore <i class="ri-arrow-right-long-fill"></i></button>
-            </div>
-        </div>
-
-        </section>
-
-        <section class="components__section">
-            
-            <div class="components__container">
-
-                <!-- <div class="card">
-                    <div class="preview__box">
-                        <div class="copy__code">
-                            <i class="ri-code-s-slash-line"></i>
-                            <p>get code</p>
-                        </div>
-                        <button id="btn-05">hover me</button>
-                    </div>
-
-                    <div class="card__text__content">
-                        <div class="left__text">
-                            <h3>Modern telescopic button</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur.</p>
-                        </div>
-                        <div class="right__cta" postId="post1">
-                            <i class="fa fa-heart heart-fa"></i>
-                            <span class="count">0</span>
-                        </div>
-                    </div>
-                </div> -->
-
-            </div>
-        </section>
-    </main>
+    </div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
